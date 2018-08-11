@@ -2,6 +2,7 @@
 package edu.conexion;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Ernesto Aviles
@@ -20,22 +21,28 @@ public class Concexion
     public void conectar(){
         try 
         {
-            
+            Class.forName("");
+            con=DriverManager.getConnection("");
         }
-        catch (Exception e) 
+        catch (ClassNotFoundException | SQLException e) 
         {
-            
+            JOptionPane.showMessageDialog(null, "Imposible conectar a base de datos\n   "+e.getMessage());
         }
     }
     public  void desconectar()
     {
         try 
         {
-            
+            if (con!=null) 
+            {
+                if (!con.isClosed()) {
+                    con.close();
+                }
+            }
         }
-        catch (Exception e) 
+        catch (SQLException e) 
         {
-            
+            JOptionPane.showMessageDialog(null, "Problemas con base de datos\n  " +e.getMessage());
         }
     }
 }
