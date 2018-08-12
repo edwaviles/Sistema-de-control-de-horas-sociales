@@ -55,5 +55,18 @@ public class Validaciones {
             evt.consume();
         }
     }
-        
+     
+    
+    //es nulo o vacio
+    public Boolean EsNuloOVacio(JTextField jt)
+    {   
+        Boolean c=false;
+        if (jt.equals("")) 
+            c=true;
+        if (jt.getText().length()==0) 
+            c=true;
+        if (jt==null) 
+            c=true;
+        return c;        
+    }
 }//fin de validaciones
