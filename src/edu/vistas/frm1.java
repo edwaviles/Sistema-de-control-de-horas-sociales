@@ -5,6 +5,8 @@
  */
 package edu.vistas;
 
+import edu.utilidades.Validaciones;
+
 /**
  *
  * @author Ernesto Aviles
@@ -17,7 +19,8 @@ public class frm1 extends javax.swing.JInternalFrame {
     public frm1() {
         initComponents();
     }
-
+    
+    Validaciones valid=new Validaciones();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,7 +60,7 @@ public class frm1 extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
-        
+        valid.soloNumeroYunPunto(evt, jTextField1);
     }//GEN-LAST:event_jTextField1KeyTyped
 
 

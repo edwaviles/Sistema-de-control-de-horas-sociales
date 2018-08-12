@@ -17,17 +17,26 @@ public class Validaciones {
     public void soloNumeros(java.awt.event.KeyEvent evt)
     {
         Character c = evt.getKeyChar();
-        if (!Character.isDigit(c) && c==KeyEvent.VK_SPACE) 
+        if (!Character.isDigit(c)) 
         {
             evt.consume();
         }
     }
     
     //solo  letras
-    public void soloLetras(java.awt.event.KeyEvent evt)
+    public void soloLetrasSinEspacios(java.awt.event.KeyEvent evt)
     {
         Character c = evt.getKeyChar();
         if (!Character.isLetter(c)) 
+        {
+            evt.consume();
+        }
+    }
+    //solo  letras
+    public void soloLetrasConEspacios(java.awt.event.KeyEvent evt)
+    {
+        Character c = evt.getKeyChar();
+        if (!Character.isLetter(c) && c!=KeyEvent.VK_SPACE) 
         {
             evt.consume();
         }

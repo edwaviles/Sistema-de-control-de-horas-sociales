@@ -55,6 +55,11 @@ public class Contenedor extends javax.swing.JFrame {
 
         openMenuItem.setMnemonic('o');
         openMenuItem.setText("Open");
+        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openMenuItemActionPerformed(evt);
+            }
+        });
         fileMenu.add(openMenuItem);
 
         saveMenuItem.setMnemonic('s');
@@ -139,6 +144,12 @@ public class Contenedor extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
+        frm1 fm=new frm1();
+        this.desktopPane.add(fm);
+        fm.setVisible(true);
+    }//GEN-LAST:event_openMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
