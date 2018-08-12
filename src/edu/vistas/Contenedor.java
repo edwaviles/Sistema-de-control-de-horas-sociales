@@ -35,19 +35,23 @@ public class Contenedor extends javax.swing.JFrame {
         saveMenuItem = new javax.swing.JMenuItem();
         saveAsMenuItem = new javax.swing.JMenuItem();
         exitMenuItem = new javax.swing.JMenuItem();
+        helpMenu = new javax.swing.JMenu();
+        contentMenuItem = new javax.swing.JMenuItem();
+        aboutMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
         pasteMenuItem = new javax.swing.JMenuItem();
         deleteMenuItem = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        fileMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/iconos/solicitud.png"))); // NOI18N
         fileMenu.setMnemonic('f');
-        fileMenu.setText("File");
+        fileMenu.setText("Solicitudes");
 
         openMenuItem.setMnemonic('o');
         openMenuItem.setText("Open");
@@ -73,8 +77,22 @@ public class Contenedor extends javax.swing.JFrame {
 
         menuBar.add(fileMenu);
 
+        helpMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/iconos/coordinator (1).png"))); // NOI18N
+        helpMenu.setMnemonic('h');
+        helpMenu.setText("Coordinadores");
+
+        contentMenuItem.setMnemonic('c');
+        contentMenuItem.setText("Contents");
+        helpMenu.add(contentMenuItem);
+
+        aboutMenuItem.setMnemonic('a');
+        aboutMenuItem.setText("About");
+        helpMenu.add(aboutMenuItem);
+
+        menuBar.add(helpMenu);
+
         editMenu.setMnemonic('e');
-        editMenu.setText("Edit");
+        editMenu.setText("Alumnos");
 
         cutMenuItem.setMnemonic('t');
         cutMenuItem.setText("Cut");
@@ -94,18 +112,13 @@ public class Contenedor extends javax.swing.JFrame {
 
         menuBar.add(editMenu);
 
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Help");
+        jMenu1.setText("Usuarios");
+        menuBar.add(jMenu1);
 
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
+        jMenu2.setText("jMenu2");
+        jMenu2.add(jSeparator1);
 
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
-        helpMenu.add(aboutMenuItem);
-
-        menuBar.add(helpMenu);
+        menuBar.add(jMenu2);
 
         setJMenuBar(menuBar);
 
@@ -113,11 +126,11 @@ public class Contenedor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
         );
 
         pack();
@@ -173,6 +186,9 @@ public class Contenedor extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
