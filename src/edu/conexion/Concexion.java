@@ -29,6 +29,8 @@ public class Concexion
             JOptionPane.showMessageDialog(null, "Imposible conectar a base de datos\n   "+e.getMessage());
         }
     }
+    
+    
     public  void desconectar()
     {
         try 
