@@ -116,6 +116,7 @@ public class FrmCoordinador extends javax.swing.JInternalFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        setClosable(true);
         setResizable(true);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -467,6 +468,7 @@ public class FrmCoordinador extends javax.swing.JInternalFrame {
             this.jTxtCorreo.setText(String.valueOf(this.jTablaDatos.getValueAt(index, 2)));
             String escuela = String.valueOf(this.jTablaDatos.getValueAt(index, 3));
             jCmbEscuela.getModel().setSelectedItem(escuela);
+     
 
         }
      }

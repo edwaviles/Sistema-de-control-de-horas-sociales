@@ -1,6 +1,8 @@
 
 package edu.vistas;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,6 +16,7 @@ public class Menu extends javax.swing.JFrame {
 
     FrmCoordinador gestionC;
     FrmHorario gestionH;
+    
     public static boolean FormularioVal=false;
     
     public Menu() {
@@ -35,6 +38,7 @@ public class Menu extends javax.swing.JFrame {
         fileMenu = new javax.swing.JMenu();
         editMenu = new javax.swing.JMenu();
         editMenu1 = new javax.swing.JMenu();
+        EditUserMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,6 +74,20 @@ public class Menu extends javax.swing.JFrame {
         });
         menuBar.add(editMenu1);
 
+        EditUserMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/edu/iconos/users.png"))); // NOI18N
+        EditUserMenu1.setText("Gestion De Usuarios");
+        EditUserMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EditUserMenu1MouseClicked(evt);
+            }
+        });
+        EditUserMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditUserMenu1ActionPerformed(evt);
+            }
+        });
+        menuBar.add(EditUserMenu1);
+
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -80,7 +98,7 @@ public class Menu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
         );
 
         pack();
@@ -130,6 +148,26 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_editMenu1MouseClicked
 
+    private void EditUserMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditUserMenu1ActionPerformed
+
+        
+    }//GEN-LAST:event_EditUserMenu1ActionPerformed
+
+    private void EditUserMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditUserMenu1MouseClicked
+        try {
+            //no
+            FrmUsuario us=new FrmUsuario();
+            desktopPane.add(us);
+            us.setVisible(true);
+            us.setLocation(
+                    desktopPane.getWidth()/2 - us.getWidth()/2,
+                    desktopPane.getHeight()/2 -us.getHeight()/2);
+        } catch (Exception ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_EditUserMenu1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -166,6 +204,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu EditUserMenu1;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenu editMenu1;

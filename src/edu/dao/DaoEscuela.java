@@ -46,6 +46,7 @@ public class DaoEscuela extends Conexion{
         }
      return lista;
     }
+   
     
     public Escuela getidEscuela(int escu)
      {
