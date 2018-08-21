@@ -79,10 +79,11 @@ public class DaoUsuario extends Conexion{
             try 
             {
                 this.conectar();
-                String sql="update usuario set usuario=? where idUsuario=?;";
+                String sql="update usuario set usuario=?,fecha_Modifica=? where idUsuario=?;";
                 PreparedStatement pre= getCon().prepareStatement(sql);
                 pre.setString(1,us.getUsuario());
-                pre.setInt(2,us.getIdUsuario());  
+                pre.setString(2,us.getFechaModificacion());
+                pre.setInt(3,us.getIdUsuario());  
                  pre.executeUpdate();
                 
                 JOptionPane.showMessageDialog(null,"Datos Modificados");

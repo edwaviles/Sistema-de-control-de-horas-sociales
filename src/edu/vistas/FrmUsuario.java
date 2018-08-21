@@ -25,6 +25,7 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
      Rol rol=new Rol();
       List<Rol> lista;
    Combo cmb = new Combo();
+  
     
     public FrmUsuario() throws Exception {
         initComponents();
@@ -151,7 +152,7 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
   
      us.setUsuario(jtxtUsuario3.getText());
      us.setIdUsuario(Integer.parseInt(jtxtId.getText()));
-     
+     us.setFechaModificacion(fecha);
      int pregunta= JOptionPane.showConfirmDialog(null,"Desea modificar el registro","modificar",JOptionPane.YES_NO_OPTION);
      if(pregunta==0)
      {
@@ -164,7 +165,7 @@ public class FrmUsuario extends javax.swing.JInternalFrame {
    
     public void eliminar()
    {
-   us.setIdUsuario(Integer.parseInt(jtxtId.getText()));
+    us.setIdUsuario(Integer.parseInt(jtxtId.getText()));
      int pregunta= JOptionPane.showConfirmDialog(null,"Desea eliminar el registro","eliminar",JOptionPane.YES_NO_OPTION);
      if(pregunta==0)
      {
